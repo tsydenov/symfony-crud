@@ -53,7 +53,7 @@ class UserController extends AbstractController
         ]), json: true);
     }
 
-    #[Route('users/{id}', methods: ['GET'])]
+    #[Route('/users/{id}', methods: ['GET'])]
     public function show(
         int $id,
     ): JsonResponse {
@@ -68,7 +68,7 @@ class UserController extends AbstractController
         ]), json: true);
     }
 
-    #[Route('users/{id}', methods: ['PATCH'])]
+    #[Route('/users/{id}', methods: ['PATCH'])]
     public function edit(
         int $id,
         Request $request,
@@ -80,7 +80,7 @@ class UserController extends AbstractController
         return new JsonResponse($userEditorResult);
     }
 
-    #[Route('users/{id}', methods: ['DELETE'])]
+    #[Route('/users/{id}', methods: ['DELETE'])]
     public function delete(
         int $id,
         UserDeleter $userDeleter
