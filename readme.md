@@ -11,6 +11,9 @@
 
 `docker compose exec php php bin/console doctrine:migrations:migrate`
 
+- Check [Postman collection](https://github.com/tsydenov/symfony-crud/blob/master/novex.postman_collection.json) for API requests examples
+- Read [task description](https://github.com/tsydenov/symfony-crud/blob/master/to-do)
+
 ## API
 ### Create user
 `POST /users/new`
