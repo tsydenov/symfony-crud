@@ -29,6 +29,10 @@ class UserController extends AbstractController
         $data = $request->toArray();
         $jsonResponse = [];
 
+        if (empty($data)) {
+            return new JsonResponse('JSON is empty!');
+        }
+
         if (!array_is_list($data)) {
             $data = [$data];
         }
