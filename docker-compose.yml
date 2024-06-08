@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+    db:
+        image: mysql:8
+        volumes:
+            - "db_app:/var/lib/mysql"
+        env_file:
+            - ./docker/.env
+        ports:
+            - 3306:3306
+        networks:
+            - symfony_app
+    php:
+        build:
+            context: ./docker/php
+        volumes:
+            - ./:/var/www/
+        networks:
+            - symfony_app
+    nginx:
+        build:
+            context: ./docker/nginx
+        volumes:
+            - ./:/var/www/
+        ports:
+            - 80:80
+        networks:
+            - symfony_app
+
+volumes:
+    symfony_app_var:
+    symfony_app_vendor:
+    db_app:
+
+
+networks:
+    symfony_app:
